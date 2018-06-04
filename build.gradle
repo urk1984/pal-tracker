@@ -9,4 +9,22 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
+
+bootRun.environment([
+        "WELCOME_MESSAGE": "hello",
+        "PORT": "123",
+        "MEMORY_LIMIT": "763M",
+        "CF_INSTANCE_INDEX": "34",
+        "CF_INSTANCE_ADDR": "Dearborn"
+])
+
+test.environment([
+        "WELCOME_MESSAGE": "Hello from test",
+        "PORT": "",
+        "MEMORY_LIMIT": "",
+        "CF_INSTANCE_INDEX": "",
+        "CF_INSTANCE_ADDR": ""
+
+])
